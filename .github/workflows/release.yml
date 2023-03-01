@@ -53,7 +53,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          repository: "https://github.com/DVMProject/dvmhost.git"
+          repository: "DVMProject/dvmhost"
           ref: ${{ needs.setup.outputs.VERSION }}
           submodules: recursive
       - name: Install dependencies
