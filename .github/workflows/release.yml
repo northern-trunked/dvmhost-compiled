@@ -60,6 +60,7 @@ jobs:
           apt-get install -y git build-essential cmake g++-arm-linux-gnueabihf gcc-arm-linux-gnueabihf g++-aarch64-linux-gnu
       - name: Build
         run: |
+          sed -i 's/3.18.4/3.16.3/g' CMakeLists.txt
           cmake -DENABLE_DMR=1 -DENABLE_P25=1 -DENABLE_NXDN=1 -DCROSS_COMPILE_${{ matrix.arch }}=1 .
       - name: Package
         run: |
