@@ -59,6 +59,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get install -y git build-essential cmake g++-arm-linux-gnueabihf gcc-arm-linux-gnueabihf g++-aarch64-linux-gnu
+          sudo git clone --recurse-submodules https://github.com/raspberrypi/tools.git /opt/tools
       - name: Build
         run: |
           sed -i 's/3.18.4/3.16.3/g' CMakeLists.txt
